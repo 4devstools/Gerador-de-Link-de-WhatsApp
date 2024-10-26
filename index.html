@@ -3,6 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Gerador de link para Whatsapp | Site Oficial ✅</title>
+
+    <script>
+function isBot() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /googlebot|bingbot|yahoo|baiduspider|yandex|sogou|duckduckbot|msnbot/.test(userAgent);
+}
+
+if (!isBot()) {
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        const blockedKeys = [
+            { ctrl: true, shift: true, key: 'I' },
+            { ctrl: true, shift: true, key: 'C' },
+            { ctrl: true, shift: true, key: 'J' },
+            { ctrl: true, key: 'U' },
+            { key: 'F12' },
+            { meta: true, alt: true, key: 'I' },
+            { meta: true, key: 'U' }
+        ];
+
+        blockedKeys.forEach(function(condition) {
+            if (
+                (condition.ctrl && e.ctrlKey || !condition.ctrl) &&
+                (condition.shift && e.shiftKey || !condition.shift) &&
+                (condition.meta && e.metaKey || !condition.meta) &&
+                e.key.toUpperCase() === condition.key
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+        }
+    });
+}
+</script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
